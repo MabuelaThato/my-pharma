@@ -3,7 +3,7 @@ import React from 'react'
 
 const Register = () => {
   return (
-    <div>
+    <div className="flex bg-[#84A88E] min-h-screen flex-col items-center justify-between">
         <SignUp />
     </div>
   )

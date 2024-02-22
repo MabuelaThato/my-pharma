@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import nookies from "nookies";
 import { User } from "firebase/auth";
-import { auth } from "@/config/firebase";
+import { auth } from "@/config/Firebase";
 
 interface Props {
   children: React.ReactNode;
