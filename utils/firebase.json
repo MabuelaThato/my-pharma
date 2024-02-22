@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "my-pharma-8703f",
+    "private_key_id": "696f3587394eac125243fefbacbf52e57b5c9ad4",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCmQ9XCtE9B2HOG\n+vlezWSpnvqzWa7vgWNCV/2qXp6662AEup2BUNg9k9jZ9utYwKSMEN4bXeWzAgIA\nwYWoP+U6cV0NrTSHJd25NNw8+/FkP+iqlk/LP0OuXe8Y1buTHvvJDTJIEopLKW/q\nSsVPh2yyXFiSfxhYN4AzkDSBZe9+cnoDqqYaUEkXuFsimCQYa5kOZp/g4N3jwfmK\n1Z4ByPvUGLuzt5slNRLHom3dJVOiAFvUc3dEh4zbwa83Fm+jJEYOpL8TCN2atGQh\nnvAyZfH/s6sgmiQBEpfpBzTj0gdMk5dnlBX2tOVjiT+VtypGyvLnqEY4x55UoN33\nKXNp3Q1nAgMBAAECggEAAzJuY6Thme5buP6OGU9mvkeNzNwOcTwyLejmOkaWfm6f\nNTK8wOtOinnozgwhlgkiQNqO2Boz8VS6YsxV0cM6GP0WtngcTfWhmqQ/EIx2+vVV\nonjAcQk24nKbnIUjlbPJ+0wzKXqdySMzVonN2yEgqxn7zq6onQL4MUWhFNSNHd0g\nCw7I5JTRfZf4ZJddk/xWvzajlyF5bORBu1fpMHsqR1QlMkmXdi5CC32aK/RHqpZx\nZgeF2ex4CWJ+8VdqYKLGmU2eyIM3eSA7/f1uFWkuSRSDbZPavRqJB094evHcHvKP\npWN++FvcdqnWaQHlctXl8GBYTW78JhmvbCxhoNg9pQKBgQDWwh37j6k+Am5yK2tg\nFK4uodh8KQkvGc7L35eqNisoSWyLClkOSiD7nKfF7ajjz8roJdO6DIckc5qhdkIg\nlkdpPNnMdI/5T0j2x10No7EvWeFvYVnkm9LGntpfZEpJw2jA+PW1ODo2ukSgW5Ah\npZK/Htg1zNUh+s2MFaXmDfqFQwKBgQDGMbR+P66UOcuoDB1CGRZY4AALLxxnLDPb\nGlW2xXvhuruFy03gF00PvIEsrlprPkuHsqKbgdCKbhIyywP4XQqF7Ienh2o783LI\nweDmnm4gakWnS5o+3L7+uYAQxEtbubduQum9lAWR4H83E+YAY5hnmVqbwiACCeL9\nznUz7ZGDDQKBgBAASKGcs5x2K+p/x7FR+SRqVKnzmMaUoq7YCwHYpWCMD/VQIRCK\nf2if5HQ/3+yRZ+niH6NmGY+iuWu8VvL8n3d83DF6oduOh74zXoCMqMABb2WQGFWL\nMqov3c9rtolGcQCnzA7jkJrRSBm2mMeZAZUR5EQl7d9pQ3Vji4fXlMnnAoGANkJp\nXZ7llqL0BH+8itn/ajl5CZbOOdi6IaPmD3GlZrkOmaR9H3qBmGtNGgRpsK6PUwku\nx1AU3bEgvlMiNR6TwPJueQjzppIRvLCHd9ur3qf5hcGG6urYRzhVvUFgOC5x73fW\nMhaSJ8vESDnkX/rkQIiVa8sLpEM8p6ucHqlNiwkCgYAd00EleC93Hu3kLtkT6BeS\nfqCMNeoac5YubsBFeDiadlJYfnfT2MAHg1KGWbLRww5Vkq80zR6T0rveNIqkLJQo\nCC9RRXGarg+Jlrt7Tw1uUZtbQzEPKiFzYfCaMYx/zoFPLtg59fU+JPWnb2njP7TM\ngeEkh+Gn0OCGR/uDcfbWdA==\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-w4ldf@my-pharma-8703f.iam.gserviceaccount.com",
+    "client_id": "115793031130150100222",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-w4ldf%40my-pharma-8703f.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }

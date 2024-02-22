@@ -1,12 +1,11 @@
-import "./globals.css";
+
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 import { Inter } from "next/font/google";
 import firebaseAdmin from "@/utils/firebaseAdmin";
-import AuthProvider from "@/components/authProvider";
 import { getFirestore } from "firebase-admin/firestore";
 import { cookies } from "next/headers";
 import getProfile from "@/components/getProfile";
+import AdminNavbar from "@/components/adminNavbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,7 +13,7 @@ export const metadata = {
   description: "An online pharmacy store",
 };
 
-export default async function RootLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -46,18 +45,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main>
+        <div>
         
-            <AuthProvider>
+          <AdminNavbar />
               {children}
-              <ToastContainer
-                autoClose={3000}
-                theme="dark"
-                position="bottom-center"
-              />
-            </AuthProvider>
   
-        </main>
+        </div>
       </body>
     </html>
   );
