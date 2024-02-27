@@ -43,15 +43,9 @@ export default async function AdminLayout({
   };
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
         <div>
-        
           <AdminNavbar />
               {children}
-  
         </div>
-      </body>
-    </html>
   );
 }

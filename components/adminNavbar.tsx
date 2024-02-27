@@ -6,15 +6,15 @@ const AdminNavbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div>
-      <nav className="w-full bg-white fixed top-0 left-0 right-0 z-10 min-h-screen">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+    <div className="">
+      <nav className="w-full bg-white fixed top-0 left-0 right-0 z-10 text-zinc-500 ">
+        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 lg:px-12">
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <div className="flex items-center justify-between md:block">
               {/* LOGO */}
               <Link href="/">
-                <h2 className="text-2xl text-cyan-600 font-bold ">
-                  <img src="logo.png" alt="" className='w-40' />
+                <h2 className=" text-[#84A88E] font-bold ">
+                  MyPharma
                 </h2>
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
@@ -38,24 +38,24 @@ const AdminNavbar = () => {
                 navbar ? 'p-12 md:p-0 block' : 'hidden'
               }`}
             >
-                <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="pb-6 text-xl py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/admin">
+                <ul className="h-screen md:h-auto items-center justify-center md:flex md:py-2">
+                <li className="pb-6 text-xl md:text-base py-2 md:px-6 text-center border-b-1 md:border-b-0  hover:bg-[#84A88E]  border-zinc-500  md:hover:text-[#84A88E] md:hover:bg-transparent">
+                  <Link href="/admin" onClick={() => setNavbar(!navbar)}>
                     Dashboard
                   </Link>
                 </li>
-                <li className="pb-6 text-xl py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/products">
+                <li className="pb-6 text-xl md:text-base py-2 px-6 text-center  border-b-1 md:border-b-0  hover:bg-[#84A88E]  border-zinc-500  md:hover:text-[#84A88E] md:hover:bg-transparent">
+                  <Link href="/admin/products" onClick={() => setNavbar(!navbar)}>
                     Products
                   </Link>
                 </li>
-                <li className="pb-6 text-xl py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="/stock">
+                <li className="pb-6 text-xl md:text-base py-2 px-6 text-center  border-b-1 md:border-b-0  hover:bg-[#84A88E]  border-zinc-500  md:hover:text-[#84A88E] md:hover:bg-transparent">
+                  <Link href="/admin/stock" onClick={() => setNavbar(!navbar)}>
                     Stock
                   </Link>
                 </li>
-                <li className="pb-6 text-xl py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="orders">
+                <li className="pb-6 text-xl md:text-base py-2 px-6 text-center  border-b-1 md:border-b-0  hover:bg-[#84A88E]  border-zinc-500  md:hover:text-[#84A88E] md:hover:bg-transparent">
+                  <Link href="/admin/orders" onClick={() => setNavbar(!navbar)}>
                     Orders
                   </Link>
                 </li>
