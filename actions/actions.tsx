@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import firebaseAdmin from "@/utils/firebaseAdmin";
 import { cookies } from 'next/headers';
 import getProfile from '@/components/getProfile';
+import { Values } from 'zod';
 
 const db = getFirestore();
 
@@ -63,3 +64,18 @@ export async function getUser(profile: DecodedIdToken) {
 
   return user;
 }
+
+export async function addProduct(form:any){
+  const db = getFirestore();
+
+  try {
+    await db
+      .collection("Products")
+      .doc()
+      .set({
+        ...form,
+      });
+  }catch(err){
+    console.log(err);
+  }
+};

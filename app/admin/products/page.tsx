@@ -1,96 +1,71 @@
-"use client"
+
 import React from 'react';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import firebaseAdmin from '@/utils/firebaseAdmin';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import ProductsHeader from '@/components/ui/productsHeader';
+import { Pencil, Trash } from 'lucide-react';
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-})
+const Products = async () => {
  
+  const productsRef = await firebaseAdmin
+    .firestore()
+    .collection("Products")
+    .get();
 
+  const products: any[] = productsRef.docs.map((doc) => {
+    return {
+      iD: doc.id,
+      ...doc.data(),
+    };
+  });
 
-const Products = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-    },
-  })
- 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
-  }
 
   return (
-    <div className='mt-24'>
-      <div className='flex justify-between'>
-        <div>
-          <h1>Products</h1>
-          <p>Add, edit and delete products</p>
-        </div>
-        <div>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline">Add Product</Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>Create a product</DialogTitle>
-            </DialogHeader>
-            <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-            <DialogFooter>
-              <Button type="submit">Save changes</Button>
-            </DialogFooter>
-            </form>
-          </Form>
-          </DialogContent>
-        </Dialog>
-        </div>
-      </div>
+    <div className=''>
+      <ProductsHeader />
+      <div className="">
+      <Table className='border rounded'>
+        <TableCaption>A list of all the products.</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>#</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Description</TableHead>
+            <TableHead>Category</TableHead>
+            <TableHead>Size</TableHead>
+            <TableHead>Price</TableHead>
+            <TableHead className='text-center'>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {products.map((product, index) => {
+            return (
+              <TableRow key={index}>
+                <TableCell>{index + 1}</TableCell>
+                <TableCell>{product?.name}</TableCell>
+                <TableCell> {product?.description}</TableCell>
+                <TableCell>{product?.category}</TableCell>
+                <TableCell>{product?.size}</TableCell>
+                <TableCell>R{product?.price}</TableCell>
+                <TableCell className='flex items-center justify-end gap-4'>
+                  <Button variant="secondary" className='bg-[#84A88E] hover:text-black text-white hover:border hover border-[#84A88E]'><Pencil size={16}/></Button>
+                  <Button ><Trash size={16}/></Button>
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </div>
     </div>
   )
 }

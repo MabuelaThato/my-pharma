@@ -81,7 +81,7 @@
 }
 
 .form-bg{
-  padding: 70px;
+  padding: 50px;
   background-color: white;
   margin-top: 50px;
   margin-bottom: 24px;
@@ -95,12 +95,13 @@
 
 .input{
   padding-left: 12px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .sub-text{
   font-size: small;
   color: rgb(97, 97, 97);
+  padding-top: 15px;
 }
 
 .nav{
@@ -153,4 +154,8 @@
 
 .sidebar li{
   width: 100%;
+}
+
+.bg{
+  background-color: rgba(132, 168, 142, 0.15);
 }

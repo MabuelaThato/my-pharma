@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { auth } from "@/config/firebase"
+import { auth } from "@/config/Firebase"
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from "react-toastify";
 import Link from 'next/link'
@@ -58,10 +58,10 @@ const SignIn = () => {
   <div className='form-bg text-center border border-slate-200 drop-shadow'>
     <div className=''>
       <img src="/logo.png" alt="A pharmacy logo" width={100}/>
-      <h1 className='text-4xl font-bold mt-6'>
+      <h1 className='text-4xl font-bold mt-2'>
         Welcome
       </h1>
-      <p className='sub-text mb-16'>Please enter your credentials</p>
+      <p className='sub-text mb-12'>Please enter your credentials</p>
 
     </div>
     <Form {...form}>
@@ -75,7 +75,7 @@ const SignIn = () => {
                   <Input 
                   placeholder="Email" 
                   {...field} 
-                  className='input'
+                  className='input focus:outline-none'
                   />
                 </FormControl>
                 <FormMessage />
@@ -91,7 +91,7 @@ const SignIn = () => {
                   <Input placeholder="Password" 
                   {...field} 
                   type='password'
-                  className='input'
+                  className='input focus:outline-none '
                   />
                 </FormControl>
                 <FormMessage />
@@ -100,16 +100,16 @@ const SignIn = () => {
           />
           <Button type="submit" 
           disabled={submitting}
-          className='w-full rounded-full'
+          className='w-full rounded-md'
           >
             {submitting? "Loading..." : "Sign in"}
             </Button>
         </form>
       </Form>
    
-    <span className='sub-text'>Don't have an account? 
+    <div className='sub-text'>Don't have an account? 
       <Link href="/sign-up" >  Register here.</Link>
-    </span>
+    </div>
   </div>
   )
 }

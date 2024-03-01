@@ -21,7 +21,9 @@ export default async function RootLayout({
         <div>
         
            <UserNavbar />
+              <div className="mx-12 mt-8">
               {children}
+              </div>
              
         </div>
       </body>

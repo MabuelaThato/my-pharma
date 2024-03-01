@@ -6,6 +6,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import { cookies } from "next/headers";
 import getProfile from "@/components/getProfile";
 import AdminNavbar from "@/components/adminNavbar";
+import { Separator } from "@/components/ui/separator";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -45,7 +46,9 @@ export default async function AdminLayout({
   return (
         <div>
           <AdminNavbar />
-              {children}
+          <div className="mx-12 mt-8">
+            {children}
+          </div>
         </div>
   );
 }

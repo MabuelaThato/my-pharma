@@ -9,11 +9,10 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { auth } from "@/config/firebase"
+import { auth } from "@/config/Firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { toast } from "react-toastify";
 import { redirectUser, registerUser } from '@/actions/actions'
@@ -47,7 +46,6 @@ const SignUp = () => {
       try {
         await createUserWithEmailAndPassword(auth, values.email, values.password);
         await registerUser();
-        await redirectUser();
 
       } catch (error) {
 
@@ -60,12 +58,12 @@ const SignUp = () => {
 
   return (
     <div className='form-bg border border-slate-200 drop-shadow'>
-      <div className=''>
+      <div className='text-center'>
       <img src="/logo.png" alt="A pharmacy logo" width={100}/>
-      <h1 className='text-4xl font-bold mt-6'>
+      <h1 className='text-4xl font-bold mt-2'>
         Welcome
       </h1>
-      <p className='sub-text mb-16'>Please enter your credentials</p>
+      <p className='sub-text mb-12'>Please enter your credentials</p>
 
     </div>
     <Form {...form}>
@@ -75,12 +73,11 @@ const SignUp = () => {
         name="email"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>email</FormLabel>
             <FormControl>
               <Input 
-              placeholder="shadcn" 
+              placeholder="Email" 
               {...field} 
-              className='input'
+              className='input focus:outline-none '
               />
             </FormControl>
             <FormMessage />
@@ -92,20 +89,19 @@ const SignUp = () => {
         name="password"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>password</FormLabel>
             <FormControl>
               <Input 
-              placeholder="shadcn" 
+              placeholder="Password" 
               {...field} 
               type='password'
-              className='input'
+              className='input focus:outline-none '
               />
             </FormControl>
             <FormMessage />
           </FormItem>
         )}
       />
-      <Button type="submit" disabled={submitting}>
+      <Button type="submit" disabled={submitting} className='w-full'>
         { submitting? "Loading..." : "Sign up"}</Button>
     </form>
   </Form>

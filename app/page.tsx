@@ -1,9 +1,12 @@
 import SignIn from "@/components/sign-in";
 
-export default function Home() {
+const Home = async () => {
+  
   return (
-    <main className="flex bg-[#84A88E] min-h-screen flex-col items-center justify-between">
-      <SignIn />
-    </main>
-  );
-}
+    <div className="flex bg-[#84A88E] min-h-screen flex-col items-center">
+      <SignIn /> 
+    </div>
+  )
+};
+
+export default Home;
